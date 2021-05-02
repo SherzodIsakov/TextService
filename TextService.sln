@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextService", "TextService\TextService.csproj", "{784889AA-7EF3-418A-B992-C67AD51D7A64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextService", "TextService\TextService.csproj", "{784889AA-7EF3-418A-B992-C67AD51D7A64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextService.Entities", "TextService.Entities\TextService.Entities.csproj", "{D679D609-3960-4ADA-B277-8009E8C5D269}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextService.Client", "TextService.Client\TextService.Client.csproj", "{E6681B6D-E705-4B1E-8D46-ADCD96EE39BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextService.Client", "TextService.Client\TextService.Client.csproj", "{E6681B6D-E705-4B1E-8D46-ADCD96EE39BF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextService.Repositories", "TextService.Repositories\TextService.Repositories.csproj", "{9AB369B3-EE32-4EE4-97BA-F4FDA7B5E485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextService.Repositories", "TextService.Repositories\TextService.Repositories.csproj", "{9AB369B3-EE32-4EE4-97BA-F4FDA7B5E485}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryBase", "..\RepositoryBase\RepositoryBase\RepositoryBase.csproj", "{A5253005-AB50-4072-9C98-DFAA7CF2E6CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextService.Services", "TextService.Services\TextService.Services.csproj", "{83815F70-7611-4049-A683-81D14ADD7DDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{784889AA-7EF3-418A-B992-C67AD51D7A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{784889AA-7EF3-418A-B992-C67AD51D7A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{784889AA-7EF3-418A-B992-C67AD51D7A64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D679D609-3960-4ADA-B277-8009E8C5D269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D679D609-3960-4ADA-B277-8009E8C5D269}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D679D609-3960-4ADA-B277-8009E8C5D269}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D679D609-3960-4ADA-B277-8009E8C5D269}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6681B6D-E705-4B1E-8D46-ADCD96EE39BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6681B6D-E705-4B1E-8D46-ADCD96EE39BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6681B6D-E705-4B1E-8D46-ADCD96EE39BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{A5253005-AB50-4072-9C98-DFAA7CF2E6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5253005-AB50-4072-9C98-DFAA7CF2E6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5253005-AB50-4072-9C98-DFAA7CF2E6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83815F70-7611-4049-A683-81D14ADD7DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83815F70-7611-4049-A683-81D14ADD7DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83815F70-7611-4049-A683-81D14ADD7DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83815F70-7611-4049-A683-81D14ADD7DDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

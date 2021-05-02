@@ -8,7 +8,7 @@ namespace TextService.Repositories
         public static void AddTextDbOption(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<TextDbOption>(options =>
-                options.ConnectionString = configuration.GetConnectionString("Text"));
+            options.ConnectionString = configuration.GetConnectionString("Default"));
         }
     }
 }

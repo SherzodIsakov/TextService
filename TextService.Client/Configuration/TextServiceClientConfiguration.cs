@@ -9,8 +9,7 @@ namespace TextService.Client.Configuration
 {
     public static class TextServiceClientConfiguration
     {
-        public static IServiceCollection AddTextServiceClient(this IServiceCollection services,
-            IConfiguration configuration)
+        public static IServiceCollection AddTextServiceClient(this IServiceCollection services, IConfiguration configuration)
         {
             services.TryAddTransient(_ => RestService.For<ITextClient>(new HttpClient()
             {

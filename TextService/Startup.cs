@@ -5,7 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using TextService.Repositories;
-using TextService.Services;
+using TextService.Repositories.Contexts;
+using TextService.Services.TextDapperService;
+using TextService.Services.TextEfService;
 
 namespace TextService
 {
@@ -20,7 +22,6 @@ namespace TextService
 
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -28,9 +29,10 @@ namespace TextService
             });
 
             services.AddTextDbOption(Configuration);
-            services.AddTransient<ITextRepository, TextRepository>();
-            services.AddTransient<ITextServices, TextServices>();
             services.AddAutoMapper(typeof(Startup));
+            services.AddTransient(typeof(TextContext));
+            services.AddTransient<ITextEfService, TextEfService>();
+            services.AddTransient<ITextDapperService, TextDapperService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

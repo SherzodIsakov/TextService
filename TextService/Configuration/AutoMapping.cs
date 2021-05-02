@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using TextService.Entities;
+using TextService.Repositories.Entities;
+using TextService.Services.Models;
 
 namespace TextService.Configuration
 {
@@ -7,7 +8,7 @@ namespace TextService.Configuration
     {
         public AutoMapping()
         {
-            CreateMap<TextService.Repositories.Text, TextFile>().ReverseMap();
+            CreateMap<TextEntity, TextModel>().ReverseMap();
         }
     }
 }

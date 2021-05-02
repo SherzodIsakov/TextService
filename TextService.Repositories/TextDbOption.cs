@@ -2,7 +2,7 @@
 
 namespace TextService.Repositories
 {
-    public class TextDbOption : DbOption
+    public class TextDbOption : BaseDbOption
     {
 
     }
