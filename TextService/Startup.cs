@@ -6,6 +6,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using TextService.Repositories;
 using TextService.Repositories.Contexts;
+using TextService.Repositories.Interfaces;
+using TextService.Repositories.Repositories;
+using TextService.Services.Interfaces;
 using TextService.Services.TextDapperService;
 using TextService.Services.TextEfService;
 
@@ -31,8 +34,12 @@ namespace TextService
             services.AddTextDbOption(Configuration);
             services.AddAutoMapper(typeof(Startup));
             services.AddTransient(typeof(TextContext));
-            services.AddTransient<ITextEfService, TextEfService>();
-            services.AddTransient<ITextDapperService, TextDapperService>();
+
+            services.AddTransient<ITextEfRepository, TextEfRepository>();
+            services.AddTransient<ITextService, TextEfService>();
+
+            services.AddTransient<ITextDapperRepository, TextDapperRepository>();
+            services.AddTransient<ITextService, TextDapperService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
