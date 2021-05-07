@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using TextService.Services.Interfaces;
-using TextService.Services.Models;
+using TextService.Entities.Models;
 
 namespace TextService.Controllers
 {
@@ -32,7 +32,7 @@ namespace TextService.Controllers
         [HttpGet]
         public async Task<IEnumerable<TextModel>> GetAll()
         {
-            var result = await _textService.GetAllTextAsync();
+            var result =  await _textService.GetAllTextAsync();
             return result;
         }
 

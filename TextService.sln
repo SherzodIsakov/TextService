@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextService.Repositories", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryBase", "..\RepositoryBase\RepositoryBase\RepositoryBase.csproj", "{A5253005-AB50-4072-9C98-DFAA7CF2E6CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextService.Services", "TextService.Services\TextService.Services.csproj", "{83815F70-7611-4049-A683-81D14ADD7DDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextService.Services", "TextService.Services\TextService.Services.csproj", "{83815F70-7611-4049-A683-81D14ADD7DDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextService.Entities", "TextService.Entities\TextService.Entities.csproj", "{841F2956-7BB7-4366-9E0C-59BDBAF42F71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{83815F70-7611-4049-A683-81D14ADD7DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83815F70-7611-4049-A683-81D14ADD7DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83815F70-7611-4049-A683-81D14ADD7DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841F2956-7BB7-4366-9E0C-59BDBAF42F71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841F2956-7BB7-4366-9E0C-59BDBAF42F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841F2956-7BB7-4366-9E0C-59BDBAF42F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841F2956-7BB7-4366-9E0C-59BDBAF42F71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

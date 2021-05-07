@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using TextService.Services.Interfaces;
-using TextService.Services.Models;
+using TextService.Entities.Models;
 using TextService.Services.TextDapperService;
 
 namespace TextService.Controllers

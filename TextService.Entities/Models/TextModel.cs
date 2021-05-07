@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TextService.Services.Models
+namespace TextService.Entities.Models
 {
     public class TextModel
     {

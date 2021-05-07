@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using TextService.Services.Models;
+using TextService.Entities.Models;
 
 namespace TextService.Services.Interfaces
 {

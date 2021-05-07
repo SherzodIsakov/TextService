@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 using TextService.Repositories.Entities;
-using TextService.Services.Models;
+using TextService.Entities.Models;
 
 namespace TextService.Configuration
 {

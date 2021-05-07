@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using TextService.Entities.Models;
 using TextService.Repositories.Entities;
 using TextService.Repositories.Interfaces;
 using TextService.Services.Interfaces;
-using TextService.Services.Models;
 
 namespace TextService.Services.TextDapperService
 {

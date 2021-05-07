@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using TextService.Repositories.Entities;
 using TextService.Repositories.Interfaces;
 using TextService.Services.Interfaces;
-using TextService.Services.Models;
+using TextService.Entities.Models;
 
 namespace TextService.Services.TextEfService
 {
@@ -25,11 +25,11 @@ namespace TextService.Services.TextEfService
 
         public async Task<TextModel> AddTextAsync(string text)
         {
-            var textFile = new TextEntity();
-            textFile.Text = text;
-
+            var textFile = new TextEntity
+            {
+                Text = text,
+            };           
             textFile = await _textRepository.CreateAsync(textFile);
-            textFile.Text = null;
 
             return _mapper.Map<TextModel>(textFile);
 

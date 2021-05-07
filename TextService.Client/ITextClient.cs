@@ -1,8 +1,9 @@
 ﻿using Refit;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using TextService.Services.Models;
+using TextService.Entities.Models;
 
 namespace TextService.Client
 {
@@ -10,6 +11,8 @@ namespace TextService.Client
     {
         [Get("/text/{id}")]
         Task<TextModel> GetById(Guid id);
+        [Get("/text")]
+        Task<IEnumerable<TextModel>> GetAll();
         [Post("/text")]
         Task<TextModel> Post([Body] string text);
         [Post("/text/file/{streamTextFile}")]
