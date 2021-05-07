@@ -37,18 +37,10 @@ namespace TextService.Controllers
             return result;
         }
 
-        [HttpPost("text/{text}")]
-        public async Task<ActionResult<TextModel>> Post([FromRoute]string text)
+        [HttpPost("text")]
+        public async Task<ActionResult<TextModel>> Post([FromBody] string text)
         {
             var textFile = await _textService.AddTextAsync(text);
-            return new OkObjectResult(textFile);
-        }
-
-        [HttpPost("file/{streamTextFile}")]
-        [Consumes("multipart/form-data")]
-        public async Task<ActionResult<string>> PostFile(Stream streamTextFile)
-        {
-            var textFile = await _textService.UploadFileStreamAsync(streamTextFile);
             return new OkObjectResult(textFile);
         }
 
@@ -65,5 +57,15 @@ namespace TextService.Controllers
             var textFile = await _textService.UploadFileFromUriAsync(fileUrl);
             return new OkObjectResult(textFile);
         }
-    }
+
+        [HttpPost("file/{streamTextFile}")]
+        [Consumes("multipart/form-data")]
+        public async Task<ActionResult<string>> PostFile(Stream streamTextFile)
+        {
+            var textFile = await _textService.UploadFileStreamAsync(streamTextFile);
+            return new OkObjectResult(textFile);
+        }
+
+
+    }   
 }
