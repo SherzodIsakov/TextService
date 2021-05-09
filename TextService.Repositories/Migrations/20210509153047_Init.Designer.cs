@@ -10,7 +10,7 @@ using TextService.Repositories.Contexts;
 namespace TextService.Repositories.Migrations
 {
     [DbContext(typeof(TextContext))]
-    [Migration("20210502212201_Init")]
+    [Migration("20210509153047_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
