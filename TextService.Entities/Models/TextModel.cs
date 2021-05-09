@@ -1,10 +1,10 @@
-﻿using System;
+﻿using RepositoryBase.Entities;
+using System;
 
 namespace TextService.Entities.Models
 {
-    public class TextModel
+    public class TextModel : BaseEntity
     {
-        public Guid Id { get; set; }
         public string Text { get; set; }
     }
 }
