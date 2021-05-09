@@ -10,7 +10,6 @@ namespace TextService.Services.Interfaces
     public interface ITextService
     {
         Task<TextModel> AddTextAsync(string text);
-
         Task<string> UploadFileFormDataAsync(HttpRequest httpRequest);
         Task<string> UploadFileFormDataAsync(IFormFile file);
         Task<string> UploadFileBinaryAsync(HttpRequest httpRequest);

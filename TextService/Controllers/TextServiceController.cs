@@ -6,19 +6,18 @@ using System.IO;
 using System.Threading.Tasks;
 using TextService.Services.Interfaces;
 using TextService.Entities.Models;
-using TextService.Services.TextDapperService;
 using Microsoft.AspNetCore.Http;
 
 namespace TextService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TextDapperController : ControllerBase
+    public class TextServiceController : ControllerBase
     {
         private readonly ITextService _textService;
-        private readonly ILogger<TextDapperController> _logger;
+        private readonly ILogger<TextServiceController> _logger;
 
-        public TextDapperController(ITextService textService, ILogger<TextDapperController> logger)
+        public TextServiceController(ITextService textService, ILogger<TextServiceController> logger)
         {
             _textService = textService;
             _logger = logger;
@@ -34,7 +33,7 @@ namespace TextService.Controllers
         [HttpGet("GetAll")]
         public async Task<IEnumerable<TextModel>> GetAll()
         {
-            var result = await _textService.GetAllTextAsync();
+            var result =  await _textService.GetAllTextAsync();
             return result;
         }
 
@@ -67,5 +66,6 @@ namespace TextService.Controllers
             return new OkObjectResult(textFile);
         }
 
-    }
+
+    }   
 }

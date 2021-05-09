@@ -16,8 +16,7 @@ namespace TextService.Services.TextDapperService
         private readonly ITextDapperRepository _textRepository;
         private readonly IMapper _mapper;
 
-        public TextDapperService(ITextDapperRepository textRepository,
-        IMapper mapper)
+        public TextDapperService(ITextDapperRepository textRepository, IMapper mapper)
         {
             _textRepository = textRepository;
             _mapper = mapper;
@@ -25,14 +24,10 @@ namespace TextService.Services.TextDapperService
 
         public async Task<TextModel> AddTextAsync(string text)
         {
-            var textFile = new TextEntity();
-            textFile.Text = text;
-
+            var textFile = new TextEntity { Text = text };
             textFile = await _textRepository.CreateAsync(textFile);
-            textFile.Text = null;
 
             return _mapper.Map<TextModel>(textFile);
-
         }
         public async Task<string> UploadFileFormDataAsync(HttpRequest httpRequest)
         {
@@ -79,7 +74,6 @@ namespace TextService.Services.TextDapperService
                 {
                     return "Файл не загружен";
                 }
-
             }
             catch (Exception ex)
             {

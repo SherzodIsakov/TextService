@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using TextService.Entities.Models;
 using TextService.Repositories.Entities;
 using TextService.Repositories.Interfaces;
 using TextService.Services.Interfaces;
-using TextService.Entities.Models;
 
 namespace TextService.Services.TextEfService
 {
@@ -16,8 +16,7 @@ namespace TextService.Services.TextEfService
         private readonly ITextEfRepository _textRepository;
         private readonly IMapper _mapper;
 
-        public TextEfService(ITextEfRepository textRepository,
-        IMapper mapper)
+        public TextEfService(ITextEfRepository textRepository, IMapper mapper)
         {
             _textRepository = textRepository;
             _mapper = mapper;
@@ -25,14 +24,10 @@ namespace TextService.Services.TextEfService
 
         public async Task<TextModel> AddTextAsync(string text)
         {
-            var textFile = new TextEntity
-            {
-                Text = text,
-            };           
+            var textFile = new TextEntity { Text = text };
             textFile = await _textRepository.CreateAsync(textFile);
 
             return _mapper.Map<TextModel>(textFile);
-
         }
         public async Task<string> UploadFileFormDataAsync(HttpRequest httpRequest)
         {
@@ -79,7 +74,6 @@ namespace TextService.Services.TextEfService
                 {
                     return "Файл не загружен";
                 }
-
             }
             catch (Exception ex)
             {
