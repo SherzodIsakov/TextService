@@ -33,7 +33,7 @@ namespace TextService.Controllers
         [HttpGet("GetAll")]
         public async Task<IEnumerable<TextModel>> GetAll()
         {
-            var result =  await _textService.GetAllTextAsync();
+            var result = await _textService.GetAllTextAsync();
             return result;
         }
 
@@ -45,10 +45,32 @@ namespace TextService.Controllers
         }
 
         [HttpPost("file")]
-        public async Task<ActionResult<string>> PostFile(IFormFile streamTextFile)
+        public async Task<ActionResult<string>> PostFile(IFormFile formFile)
         {
-            var textFile = await _textService.UploadFileFormDataAsync(streamTextFile);
-            return new OkObjectResult(textFile);
+            if (formFile != null)
+            {
+                var result = await _textService.UploadFileFormDataAsync(formFile);
+                return new OkObjectResult(result);
+            }
+
+            return new OkObjectResult($"formFile Is Empty");
+        }
+
+        [HttpPost("files")]
+        public async Task<ActionResult<string>> PostFiles(List<IFormFile> formFiles)
+        {
+            if (formFiles != null && formFiles.Count > 0)
+            {
+                string textFilesResult = string.Empty;
+                foreach (var streamTextFile in formFiles)
+                {
+                    textFilesResult += await _textService.UploadFileFormDataAsync(streamTextFile) + ", ";
+                }
+
+                return new OkObjectResult(textFilesResult);
+            }
+
+            return new OkObjectResult($"formFiles Is Empty");
         }
 
         [HttpPost("url/{fileUrl}")]
@@ -67,5 +89,5 @@ namespace TextService.Controllers
         }
 
 
-    }   
+    }
 }
