@@ -12,8 +12,10 @@ namespace TextService.Client.Configuration
         public static IServiceCollection AddTextServiceClient(this IServiceCollection services, IConfiguration configuration)
         {
             services.TryAddTransient(_ => RestService.For<ITextClient>(
-                new HttpClient(
-                new HttpClientHandler { ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true })
+                new HttpClient
+                (
+                    //new HttpClientHandler { ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true }
+                )
                 {
                     BaseAddress = new Uri(configuration["ServiceUrls:TextService"])
                 }));

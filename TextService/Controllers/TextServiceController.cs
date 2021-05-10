@@ -23,15 +23,15 @@ namespace TextService.Controllers
             _logger = logger;
         }
 
-        [HttpGet("GetById/{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<TextModel>> GetById(Guid id)
         {
             var result = await _textService.GetTextByIdAsync(id);
             return result;
         }
 
-        [HttpGet("GetAll")]
-        public async Task<IEnumerable<TextModel>> GetAll()
+        [HttpGet]
+        public async Task<IEnumerable<TextModel>> GetAllTexts()
         {
             var result = await _textService.GetAllTextAsync();
             return result;
