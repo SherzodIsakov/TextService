@@ -35,11 +35,11 @@ namespace TextService
             services.AddAutoMapper(typeof(Startup));
             services.AddTransient(typeof(TextContext));
 
-            services.AddTransient<ITextEfRepository, TextEfRepository>();
-            services.AddTransient<ITextService, TextEfService>();
+            //services.AddTransient<ITextEfRepository, TextEfRepository>();
+            //services.AddTransient<ITextService, TextEfService>();
 
-            //services.AddTransient<ITextDapperRepository, TextDapperRepository>();
-            //services.AddTransient<ITextService, TextDapperService>();
+            services.AddTransient<ITextDapperRepository, TextDapperRepository>();
+            services.AddTransient<ITextService, TextDapperService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

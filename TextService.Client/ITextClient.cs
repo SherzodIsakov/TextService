@@ -12,6 +12,7 @@ namespace TextService.Client
     {
         [Get("/text/GetById/{id}")]
         Task<TextModel> GetById(Guid id);
+
         [Get("/text/GetAll")]
         Task<IEnumerable<TextModel>> GetAll();
 
