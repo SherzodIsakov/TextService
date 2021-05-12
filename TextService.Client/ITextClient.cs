@@ -10,22 +10,22 @@ namespace TextService.Client
 {
     public interface ITextClient
     {
-        [Get("/textservice/{id}")]
+        [Get("/api/textservice/{id}")]
         Task<TextModel> GetById(Guid id);
 
-        [Get("/textservice")]
+        [Get("/api/textservice")]
         Task<IEnumerable<TextModel>> GetAllTexts();
 
-        [Post("/textservice/text")]
+        [Post("/api/textservice/text")]
         Task<TextModel> Post([Body] string text);
 
-        [Post("/textservice/file")]
+        [Post("/api/textservice/file")]
         Task<TextModel> PostFile(IFormFile streamTextFile);        
 
-        [Post("/textservice/url/{fileUrl}")]
+        [Post("/api/textservice/url/{fileUrl}")]
         Task<TextModel> PostFileUrl([Body] string fileUrl);
 
-        [Post("/textservice/file/{streamTextFile}")]
+        [Post("/api/textservice/file/{streamTextFile}")]
         Task<TextModel> PostFile(Stream streamTextFile);
     }
 }

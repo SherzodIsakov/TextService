@@ -14,10 +14,11 @@ namespace TextService.Client.Configuration
             services.TryAddTransient(_ => RestService.For<ITextClient>(
                 new HttpClient
                 (
-                    //new HttpClientHandler { ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true }
+                    new HttpClientHandler { ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true }
                 )
                 {
-                    BaseAddress = new Uri(configuration["ServiceUrls:TextService"])
+                    BaseAddress = new Uri(configuration["ServiceUrls:TextService"]),
+                    Timeout = TimeSpan.FromMinutes(5)
                 }));
 
             return services;
