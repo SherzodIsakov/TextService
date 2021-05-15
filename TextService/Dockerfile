@@ -12,7 +12,7 @@ COPY ["TextService.Services/TextService.Services.csproj", "TextService.Services/
 COPY ["TextService.Repositories/TextService.Repositories.csproj", "TextService.Repositories/"]
 COPY ["../RepositoryBase/RepositoryBase/RepositoryBase.csproj", "../RepositoryBase/RepositoryBase/"]
 COPY ["TextService.Entities/TextService.Entities.csproj", "TextService.Entities/"]
-COPY ["../RepositoryBase/AuthenticationBase/AuthenticationBase.csproj", "../RepositoryBase/AuthenticationBase/"]
+COPY ["../AuthenticationBase/AuthenticationBase/AuthenticationBase.csproj", "../AuthenticationBase/AuthenticationBase/"]
 RUN dotnet restore "TextService/TextService.csproj"
 COPY . .
 WORKDIR "/src/TextService"
