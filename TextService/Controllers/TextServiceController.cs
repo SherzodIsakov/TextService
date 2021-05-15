@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using TextService.Services.Interfaces;
 using TextService.Entities.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TextService.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TextServiceController : ControllerBase

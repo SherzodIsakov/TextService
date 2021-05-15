@@ -1,3 +1,4 @@
+using AuthenticationBase.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,7 @@ namespace TextService
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAppAuthentication(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -55,6 +57,7 @@ namespace TextService
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

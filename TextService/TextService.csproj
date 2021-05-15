@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\RepositoryBase\AuthenticationBase\AuthenticationBase.csproj" />
     <ProjectReference Include="..\TextService.Repositories\TextService.Repositories.csproj" />
     <ProjectReference Include="..\TextService.Services\TextService.Services.csproj" />
   </ItemGroup>
