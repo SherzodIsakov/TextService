@@ -20,7 +20,7 @@ namespace TextService.Controllers
         private readonly ILogger<TextServiceController> _logger;
 
         public TextServiceController(ITextService textService, ILogger<TextServiceController> logger)
-        {
+        {            
             _textService = textService;
             _logger = logger;
         }
@@ -31,10 +31,11 @@ namespace TextService.Controllers
             var result = await _textService.GetTextByIdAsync(id);
             return result;
         }
-
+        
         [HttpGet]
         public async Task<IEnumerable<TextModel>> GetAllTexts()
         {
+            var token = Request.Headers["Authorization"];
             var result = await _textService.GetAllTextAsync();
             return result;
         }

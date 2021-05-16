@@ -8,13 +8,14 @@ using TextService.Entities.Models;
 
 namespace TextService.Client
 {
+   
     public interface ITextClient
     {
         [Get("/api/textservice/{id}")]
         Task<TextModel> GetById(Guid id);
 
         [Get("/api/textservice")]
-        Task<IEnumerable<TextModel>> GetAllTexts();
+        Task<IEnumerable<TextModel>> GetAllTexts();/*[Header("Authorization")] string token*/
 
         [Post("/api/textservice/text")]
         Task<TextModel> Post([Body] string text);

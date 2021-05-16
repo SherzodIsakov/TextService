@@ -26,13 +26,10 @@ namespace TextService
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAppAuthentication(Configuration);
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TextService", Version = "v1" });
-            });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "TextService", Version = "v1" }); });
 
+            services.AddAppAuthentication(Configuration);
             services.AddTextDbOption(Configuration);
             services.AddAutoMapper(typeof(Startup));
             services.AddTransient(typeof(TextContext));
