@@ -15,6 +15,7 @@ namespace TextService.Client.Configuration
 {
     public static class TextServiceClientConfiguration
     {
+        //Работа без авторизации
         public static IServiceCollection AddTextServiceClient(this IServiceCollection services, IConfiguration configuration)
         {
             services.TryAddTransient(_ => RestService.For<ITextClient>(
@@ -29,9 +30,23 @@ namespace TextService.Client.Configuration
 
             return services;
         }
+
+        //Работа с токеном
         public static IServiceCollection AddTextServiceTokenClient(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddApiClient<ITextClient>(configuration, new RefitSettings(), "ServiceUrls:TextService");
+
+            return services;
+        }
+
+        //Получение токена из appsettings
+        public static IServiceCollection AddTextServiceGetTokenClient(this IServiceCollection services, IConfiguration configuration)
+        {
+            var refitSettings = new RefitSettings
+            {
+                AuthorizationHeaderValueGetter = () => Task.FromResult(configuration["Token"])
+            };
+            services.AddApiClient<ITextClient>(configuration, refitSettings, "ServiceUrls:TextService");
 
             return services;
         }
