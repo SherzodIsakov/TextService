@@ -29,19 +29,8 @@ namespace TextService.Client.Configuration
 
             return services;
         }
-
         public static IServiceCollection AddTextServiceTokenClient(this IServiceCollection services, IConfiguration configuration)
         {
-            //var toksettingen = new ApiSettings
-            //{
-            //    Token =
-            //    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTQ4NTk1NjItMmFhMC00ZmFjLTlkZjAtYmNmMTY2MGFlZGM0IiwianRpIjoiZDQ5ZGEwZDEtOGMwOC00ZGEzLWFmNDctZWZiYzM3MDVmODM0IiwiZXhwIjoxNjIxMTg1ODUwLCJpc3MiOiJhdXRoZW50aWNhdGlvbnNlcnZpY2UiLCJhdWQiOiJhdXRoZW50aWNhdGlvbnNlcnZpY2UifQ.Z9oSqZH-jnpRXoZiBeoPqT-u2yxvcU3wy14VIJGHcQ0"
-            //};
-            //var rs = new RefitSettings()
-            //{
-            //    //AuthorizationHeaderValueGetter = () => Task.FromResult(toksettingen.Token)
-            //};
-
             services.AddApiClient<ITextClient>(configuration, new RefitSettings(), "ServiceUrls:TextService");
 
             return services;

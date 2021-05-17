@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 using TextService.Entities.Models;
 
 namespace TextService.Client
-{
-   
+{   
     public interface ITextClient
     {
         [Get("/api/textservice/{id}")]
