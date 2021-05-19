@@ -7,15 +7,12 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["TextService/TextService.csproj", "TextService/"]
-COPY ["TextService.Services/TextService.Services.csproj", "TextService.Services/"]
-COPY ["TextService.Repositories/TextService.Repositories.csproj", "TextService.Repositories/"]
-COPY ["../RepositoryBase/RepositoryBase/RepositoryBase.csproj", "../RepositoryBase/RepositoryBase/"]
-COPY ["TextService.Entities/TextService.Entities.csproj", "TextService.Entities/"]
-COPY ["../AuthenticationBase/AuthenticationBase/AuthenticationBase.csproj", "../AuthenticationBase/AuthenticationBase/"]
-RUN dotnet restore "TextService/TextService.csproj"
-COPY . .
-WORKDIR "/src/TextService"
+COPY ./TextService ./TextService
+COPY ./AuthenticationBase ./AuthenticationBase
+COPY ./RepositoryBase ./RepositoryBase
+WORKDIR ./TextService/TextService
+
+RUN dotnet restore "TextService.csproj"
 RUN dotnet build "TextService.csproj" -c Release -o /app/build
 
 FROM build AS publish
